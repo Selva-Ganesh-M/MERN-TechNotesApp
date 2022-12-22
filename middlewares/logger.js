@@ -4,7 +4,7 @@ const fs = require("fs");
 const fsPromises = require("fs").promises;
 const path = require("path");
 
-const fileLogger = async (message, fileName) => {
+const loggerFunc = async (message, fileName) => {
   const time = format(new Date(), "yyyy-MM-dd\tHH:mm:ss");
   const data = `${time}\t${uuid()}\t${message}\n`;
   try {
@@ -29,5 +29,5 @@ const loggerMiddleware = (req, res, next) => {
 
 module.exports = {
   loggerMiddleware,
-  fileLogger,
+  loggerFunc,
 };
