@@ -22,7 +22,7 @@ const loggerFunc = async (message, fileName) => {
 
 const loggerMiddleware = (req, res, next) => {
   const message = `${req.method}\t${req.path}\t${req.headers.origin}`;
-  fileLogger(message, "reqLog.log");
+  loggerFunc(message, "reqLog.log");
   console.log(message);
   next();
 };
